@@ -38,6 +38,6 @@ pgms:	$(PROGRAMS)
 	install $^ $(SCRATCH_DIR)/bin
 
 $(SCRATCH_ZIP):	$(SCRATCH_DIR)
-	(cd $(SCRATCH_DIR) && zip -r ../$(SCRATCH_ZIP) *)
+	(cd $(SCRATCH_DIR) && zip -r - *) > $(SCRATCH_ZIP)
 
 archive:	$(SCRATCH_ZIP)
