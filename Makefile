@@ -40,4 +40,4 @@ pgms:	$(PROGRAMS)
 $(SCRATCH_ZIP):	$(SCRATCH_DIR)
 	zip -r $(SCRATCH_ZIP) $(SCRATCH_DIR)
 
-dmg:	$(SCRATCH_ZIP)
+archive:	$(SCRATCH_ZIP)
