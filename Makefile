@@ -32,7 +32,7 @@ deps:	$(LIBS)
 	mkdir -p $(SCRATCH_DIR)/bin
 	mv $(SCRATCH_DIR)/thymio_motion.aesl $(SCRATCH_DIR)/bin
 	cp Resources/asebascratch.ico $(SCRATCH_DIR)/bin
-	$(if $(DEPFILES),install $DEPFILES $(SCRATCH_DIR)/bin)
+	$(if $(DEPFILES),install $(DEPFILES) $(SCRATCH_DIR)/bin)
 
 pgms:	$(PROGRAMS)
 	install $^ $(SCRATCH_DIR)/bin
