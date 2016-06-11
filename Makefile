@@ -10,7 +10,7 @@ ASEBASCRATCH = $(ASEBA)/examples/clients/scratch/asebascratch.exe
 
 PROGRAMS = $(PORTLIST) $(ASEBAHTTP) $(ASEBASCRATCH)
 
-DEPS = libgcc_s_dw2-1.dll libiconv-2.dll libstdc++-6.dll libwinpthread-1.dll libxml2-2.dll zlib1.dll
+DEPS = libgcc_s_dw2-1.dll libiconv-2.dll libstdc++-6.dll libwinpthread-1.dll libxml2-2.dll zlib1.dll liblzma-5.dll
 DEPFILES = $(shell which $(DEPS))
 
 # packaging
@@ -26,7 +26,7 @@ dir:
 	mkdir -p $(SCRATCH_DIR)
 	$(squashcopy) --exclude '.??*' --exclude tests --exclude playground \
 		inirobot/ $(SCRATCH_DIR)
-	cp Resources/Scratch2-ThymioII.bat $(SCRATCH_DIR)
+	cp Resources/Scratch2-ThymioII.lnk $(SCRATCH_DIR)
 
 deps:	$(LIBS)
 	mkdir -p $(SCRATCH_DIR)/bin
@@ -38,6 +38,6 @@ pgms:	$(PROGRAMS)
 	install $^ $(SCRATCH_DIR)/bin
 
 $(SCRATCH_ZIP):	$(SCRATCH_DIR)
-	zip -r $(SCRATCH_ZIP) $(SCRATCH_DIR)
+	(cd $(SCRATCH_DIR) && zip -r - *) > $(SCRATCH_ZIP)
 
 archive:	$(SCRATCH_ZIP)
