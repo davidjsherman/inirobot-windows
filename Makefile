@@ -5,8 +5,8 @@ DASHEL = ~/src/build-dashel
 PORTLIST = $(DASHEL)/portlist
 
 ASEBA = ~/work/build-aseba
-ASEBAHTTP = $(ASEBA)/switches/http/asebahttp
-ASEBASCRATCH = $(ASEBA)/examples/clients/scratch/asebascratch
+ASEBAHTTP = $(ASEBA)/switches/http/asebahttp.exe
+ASEBASCRATCH = $(ASEBA)/examples/clients/scratch/asebascratch.exe
 
 PROGRAMS = $(PORTLIST) $(ASEBAHTTP) $(ASEBASCRATCH)
 
