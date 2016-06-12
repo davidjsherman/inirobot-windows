@@ -15,8 +15,8 @@ DEPFILES = $(shell which $(DEPS))
 
 # packaging
 SCRATCH_DIR = Scratch
-SCRATCH_ZIP = $(SCRATCH_DIR).zip
 SCRATCH_VOL = Scratch2-ThymioII
+SCRATCH_ZIP = $(SCRATCH_VOL).zip
 squashcopy := rsync -a -L --no-perms --chmod=go-w
 
 # rules
